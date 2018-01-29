@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flot Demo</title>
+    <script src="libs/jquery-3.2.1.js"></script>
+    <script src="libs/jquery.flot.js"></script>
+    <style>
+        #placeholder
+        {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+<div id="placeholder"></div>
+<script language="JavaScript">
+    $(document).ready(function() {
+        show_data();
+    });
+    function show_data(){
+        var d1 = [];
+        for (var i = 0; i < 14; i += 0.5) {
+            d1.push([i, Math.sin(i)]);
+        }
+
+        $.plot("#placeholder", [{
+            data: d1,
+            lines: { show: true, fill: true }
+        }]);
+    }
+
+</script>
+</body>
+</html>

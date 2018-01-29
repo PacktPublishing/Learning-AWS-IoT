@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chart.js Demo</title>
+    <script src="libs/Chart.js"></script>
+    <script src="libs/jquery-3.2.1.js"></script>
+</head>
+<body>
+<canvas id="myChart" width="200" height="100" style="border:1px solid #000000;"></canvas>
+<script>
+    $(document).ready(function() {
+        $.getJSON('data.json', function(data) {
+            console.log(data);
+            show_data(data);
+        });
+    });
+    function show_data(data){
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myLineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Sensor data',
+                    borderColor: "rgba(210, 54, 54, 1)",
+                    fill: false,
+                    data: data
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        type: 'linear',
+                        position: 'bottom'
+                    }]
+                }
+            }
+        });
+    }
+
+</script>
+</body>
+</html>

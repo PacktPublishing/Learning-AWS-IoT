@@ -1,0 +1,12 @@
+{
+  "name": "iot-button",
+  "version": "1.0.0",
+  "description": "iot-button",
+  "main": "aws-iot-pi.js",
+  "dependencies": {
+    "aws-iot-device-sdk": "^2.2.0",
+    "rpio": "^0.9.19"
+  },
+  "devDependencies": {},
+  "author": "Agus Kurniawan"
+}

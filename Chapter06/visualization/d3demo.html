@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3.js Demo</title>
+    <script src="libs/d3.js"></script>
+    <script src="libs/jquery-3.2.1.js"></script>
+    <style>
+        .axis path, .axis line
+        {
+            fill: none;
+            stroke: #777;
+            shape-rendering: crispEdges;
+        }
+
+        .axis text
+        {
+            font-family: 'Arial';
+            font-size: 13px;
+        }
+        .tick
+        {
+            stroke-dasharray: 1, 2;
+        }
+        .bar
+        {
+            fill: FireBrick;
+        }
+    </style>
+</head>
+<body>
+<svg id="img" width="500" height="250"></svg>
+<script language="JavaScript">
+    $(document).ready(function() {
+        $.getJSON('data.json', function(data) {
+
+            console.log(data);
+            display_data(data);
+        });
+    });
+
+    function display_data(sensorData) {
+        var vis = d3.select("#img"),
+            WIDTH = 500,
+            HEIGHT = 250,
+            MARGINS = {
+                top: 20,
+                right: 20,
+                bottom: 20,
+                left: 50
+            },
+            xRange = d3.scaleLinear()
+                .range([MARGINS.left, WIDTH - MARGINS.right])
+                .domain([d3.min(sensorData, function (d) {
+                return d.x;
+            }),
+                d3.max(sensorData, function (d) {
+                    return d.x;
+                })
+            ]),
+
+            yRange = d3.scaleLinear()
+                .range([HEIGHT - MARGINS.top, MARGINS.bottom])
+                .domain([d3.min(sensorData, function (d) {
+                return d.y;
+            }),
+                d3.max(sensorData, function (d) {
+                    return d.y;
+                })
+            ]),
+
+            xAxis = d3.axisBottom()
+                .scale(xRange)
+                .tickSize(5),
+
+            yAxis = d3.axisLeft()
+                .scale(yRange)
+                .tickSize(5);
+
+
+        vis.append("svg:g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
+            .call(xAxis);
+
+        vis.append("svg:g")
+            .attr("class", "y axis")
+            .attr("transform", "translate(" + (MARGINS.left) + ",0)")
+            .call(yAxis);
+
+        var lineFunc = d3.line()
+            .x(function (d) {
+                return xRange(d.x);
+            })
+            .y(function (d) {
+                return yRange(d.y);
+            });
+
+        vis.append("svg:path")
+            .attr("d", lineFunc(sensorData))
+            .attr("stroke", "blue")
+            .attr("stroke-width", 2)
+            .attr("fill", "none");
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "ml",
+  "version": "1.0.0",
+  "description": "machine learning for aws",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Agus Kurniawan",
+  "dependencies": {
+    "aws-sdk": "^2.176.0",
+    "speaker": "^0.4.0"
+  }
+}

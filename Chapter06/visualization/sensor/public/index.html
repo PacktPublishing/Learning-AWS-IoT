@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Visualizing Real-Time Sensor Data</title>
+    <script language="javascript" type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/jquery.flot.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script language="javascript" type="text/javascript">
+        var socket = io.connect();
+        var items = [];
+        var counter = 0;
+        socket.on('data', function (data) {
+            items.push([counter, data]);
+            counter = counter + 1;
+            if (items.length > 20)
+                items.shift();
+            $.plot($("#placeholder"), [items]);
+        });
+    </script>
+
+</head>
+<body>
+<h1>Real-Time Sensor Data Visualization</h1>
+<br>
+<div id="placeholder" style="width:600px;height:300px;"></div>
+</body>
+</html>
