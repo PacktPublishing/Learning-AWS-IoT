@@ -5,7 +5,7 @@ The Internet of Things market increased a lot in the past few years and IoT deve
 
 This book initially introduces you to the IoT platforms, and how it makes our IoT development easy. It then covers the complete AWS IoT Suite and how it can be used to develop secure communication between internet-connected things such as sensors, actuators, embedded devices, smart applications, and so on. The book also covers the various modules of AWS: AWS Greengrass, AWS device SDKs, AWS IoT Platform, AWS Button, AWS Management consoles, AWS-related CLI, and API references, all with practical use cases.
 
-Near the end, the book supplies security-related best practices to make bi-directional communication more secure. When you've finished this book, you'll be up-and-running with the AWS IoT Suite, and building IoT projects..
+Near the end, the book supplies security-related best practices to make bi-directional communication more secure. When you've finished this book, you'll be up-and-running with the AWS IoT Suite, and building IoT projects.
 ## Instructions and Navigation
 All of the code is organized into folders. Each folder starts with a number followed by the application name. For example, Chapter02.
 
