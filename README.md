@@ -17,6 +17,26 @@ var awsConfiguration = {
  region: '<region>' // 'YourAwsRegion', e.g. 'us-east-1'
 };
 ```
+## Hardware and Software Requirements
+
+The hardware requirements for this book include the following:
+
+Raspberry Pi 3
+Arduino Yún
+AWS IoT Button
+SimpleLink™ Wi-Fi® CC3220SF Wireless LaunchPad
+DHT22 Sensor
+LEDs
+Breadboard
+Jumper cables
+
+The software requirements are as follows:
+
+AWS License
+Arduino Software
+Python and its libraries
+Node.js
+
 ## Related Products
 * [Azure IoT Development Cookbook](https://www.packtpub.com/virtualization-and-cloud/azure-iot-development-cookbook?utm_source=github&utm_medium=repository&utm_content=9781787283008)
 
