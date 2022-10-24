@@ -43,3 +43,7 @@ The software requirements are as follows:
 * [MQTT Essentials - A Lightweight IoT Protocol](https://www.packtpub.com/application-development/mqtt-essentials-lightweight-iot-protocol?utm_source=github&utm_medium=repository&utm_content=9781787287815)
 
 * [IoT Penetration Testing Cookbook](https://www.packtpub.com/networking-and-servers/iot-penetration-testing-cookbook?utm_source=github&utm_medium=repository&utm_content=9781787280571)
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781788396110">https://packt.link/free-ebook/9781788396110 </a> </p>
